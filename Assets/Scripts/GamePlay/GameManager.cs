@@ -10,8 +10,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        _gameOverPanel.SetActive(false);
     }
-
+    private void Update()
+    {
+        OpenGameOverPanel();
+    }
     public void GameOver()
     {
         Time.timeScale = 0;
@@ -32,11 +36,21 @@ public class GameManager : MonoBehaviour
         {
             _gameOverPanel.SetActive(false);
         }
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void ExitToMainMenu()
     {
+        Destroy(GameObject.FindWithTag("Player"));
+
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+    private void OpenGameOverPanel()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            _gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

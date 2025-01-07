@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangerColorGround : MonoBehaviour
 {
-    private Renderer _renderColor;
+    [SerializeField] private Renderer _renderColor;
 
     private void Start()
     {

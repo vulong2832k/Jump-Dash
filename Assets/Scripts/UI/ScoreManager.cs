@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     private const string _highScoreKey = "best:";
 
     public System.Action<int> OnScoreChangeColorGround;
-    private int _nextThreshold = 30;
+    private int _nextThreshold = 5;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
             {
                 OnScoreChangeColorGround.Invoke(_curScore);
             }
-            _nextThreshold += 30;
+            _nextThreshold += 5;
         }
     }
 
