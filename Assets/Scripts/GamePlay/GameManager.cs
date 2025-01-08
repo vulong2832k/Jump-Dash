@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _pauseGamePanel;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        OpenGameOverPanel();
+        OpenPauseGamePanel();
     }
     public void GameOver()
     {
@@ -45,11 +46,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
-    private void OpenGameOverPanel()
+    private void OpenPauseGamePanel()
     {
         if(Input.GetKey(KeyCode.Escape))
         {
-            _gameOverPanel.SetActive(true);
+            _pauseGamePanel.SetActive(true);
             Time.timeScale = 0f;
         }
     }
