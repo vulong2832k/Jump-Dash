@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _pauseGamePanel;
 
+    [Header("Image")]
+    [SerializeField] private GameObject _imageBestScore;
+    [SerializeField] private float _rotateSpeed;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -16,6 +20,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         OpenPauseGamePanel();
+        RotateImage();
     }
     public void GameOver()
     {
@@ -53,5 +58,9 @@ public class GameManager : MonoBehaviour
             _pauseGamePanel.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
+    private void RotateImage()
+    {
+        _imageBestScore.transform.Rotate(0f, _rotateSpeed * Time.deltaTime, 0f);
     }
 }
