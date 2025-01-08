@@ -49,4 +49,9 @@ public class ScoreManager : MonoBehaviour
     {
         return PlayerPrefs.GetInt(_highScoreKey, 0);
     }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt(_highScoreKey, 0);
+        PlayerPrefs.Save();
+    }
 }

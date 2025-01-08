@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ObstacleController : MonoBehaviour
 {
@@ -22,7 +21,6 @@ public class ObstacleController : MonoBehaviour
         {
             ScoreManager.Instance.AddScore(1);
             gameObject.SetActive(false);
-        }
-            
+        } 
     }
 }

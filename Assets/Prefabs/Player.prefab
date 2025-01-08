@@ -276,3 +276,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 20
+  _effectPrefab: {fileID: 0}
+  _collisionSound: {fileID: 0}

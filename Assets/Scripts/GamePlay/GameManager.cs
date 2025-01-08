@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     [Header("Image")]
     [SerializeField] private GameObject _imageBestScore;
     [SerializeField] private float _rotateSpeed;
+
+    [SerializeField] private List<ObstacleController> _obstacles;
 
     private void Start()
     {
