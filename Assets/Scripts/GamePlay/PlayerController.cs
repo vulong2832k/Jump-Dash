@@ -50,7 +50,9 @@ public class PlayerController : MonoBehaviour
         {
             ContactPoint2D contactPoint = collision.GetContact(0);
 
-            Instantiate(_effectPrefab, contactPoint.point, Quaternion.identity);
+            GameObject effect = Instantiate(_effectPrefab, contactPoint.point, Quaternion.identity);
+
+            Destroy(effect, 1f);
 
             if(_collisionSound != null)
             {
